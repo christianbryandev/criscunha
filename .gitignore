@@ -1,0 +1,6 @@
+# Arquivos originais de mídia (grandes; a versão otimizada vive em assets/media)
+midias/
+
+node_modules/
+.DS_Store
+Thumbs.db
