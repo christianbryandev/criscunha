@@ -47,9 +47,12 @@ Os arquivos de `assets/media/` são derivados dos originais em `midias/`:
   sem áudio, em 720×1280 (2,3 MB) e 480×854 (1,0 MB) para telas menores.
   Carrega apenas quando a seção se aproxima da viewport.
 - **Galeria e seção Sobre** — quadros extraídos do vídeo original em resolução
-  nativa (720 px de largura), sem ampliação, mais as fotos de `resultado*.png`.
-  Das duas montagens, entra o painel inteiro e limpo de cada uma; a terceira é
-  usada integralmente.
+  nativa (720 px de largura), sem ampliação, mais fotos reais fornecidas pela
+  Cris (arquivos `nova 1`…`nova 6` em `midias/`), todas redimensionadas de
+  forma proporcional, sem crop forçado e sem upscaling.
+- **Comparativo antes/depois** — par `nova antes.jpeg` / `nova depois.jpeg`,
+  o mesmo enquadramento em dois momentos, apresentado lado a lado no desktop
+  e empilhado (antes acima, depois abaixo) no mobile. Sem edição de resultado.
 - **Depoimentos** — recortes diretos de `avaliacoes.png`, o print real do Google.
   As avaliações não são recriadas em HTML.
 

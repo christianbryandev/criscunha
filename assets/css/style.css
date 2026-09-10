@@ -425,6 +425,7 @@ address{font-style:normal}
 .about-copy .eyebrow{margin-bottom:14px}
 .about-copy .section-title{margin-bottom:22px}
 .about-copy p{color:var(--ink-60);margin-bottom:16px;max-width:50ch}
+.about-copy .since{color:var(--burgundy);font-weight:600;white-space:nowrap}
 .about-copy .link-arrow{margin-top:10px}
 
 /* ---------- Experiência ---------- */
@@ -489,6 +490,42 @@ address{font-style:normal}
   .review-hint span{display:inline-block;margin-left:4px;color:var(--gold)}
 }
 
+/* ---------- Comparativo antes / depois ---------- */
+.compare{
+  margin-bottom:clamp(40px,5vw,64px);
+  padding:clamp(22px,3vw,34px);
+  background:var(--white);
+  border:1px solid rgba(122,41,69,.1);
+  border-radius:var(--r-lg);
+  box-shadow:var(--shadow-card);
+}
+.compare-head{
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;
+  margin-bottom:18px;
+}
+.compare-eyebrow{
+  font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--burgundy);
+}
+.compare-note{font-size:13px;color:var(--ink-45)}
+.compare-frame{
+  display:grid;grid-template-columns:1fr;gap:14px;
+}
+.compare-panel{position:relative;overflow:hidden;border-radius:var(--r-md);background:var(--nude-soft)}
+.compare-panel img{width:100%;display:block}
+.compare-tag{
+  position:absolute;top:14px;left:14px;z-index:1;
+  padding:6px 14px;border-radius:999px;
+  font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--white);background:rgba(43,37,39,.55);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+}
+.compare-tag-depois{background:var(--burgundy)}
+
+@media (min-width:701px){
+  .compare-frame{grid-template-columns:1fr 1fr;gap:18px}
+}
+
 /* ---------- Galeria (composição editorial em colunas) ---------- */
 .gallery{padding-block:var(--sec-y)}
 .gallery-grid{column-count:1;column-gap:14px}
@@ -510,9 +547,10 @@ address{font-style:normal}
 .place-grid{display:grid;gap:clamp(30px,4vw,64px);align-items:center}
 .place-copy .eyebrow{margin-bottom:14px}
 .place-copy .section-title{margin-bottom:24px;max-width:15ch}
-.place-address{display:grid;gap:4px;margin-bottom:28px}
-.place-line{font-family:var(--serif);font-size:clamp(21px,2.3vw,27px);color:var(--ink)}
-.place-line-muted{font-size:14.5px;color:var(--ink-45)}
+.place-address{display:grid;gap:6px;margin-bottom:28px}
+.place-line-building{font-family:var(--serif);font-size:clamp(22px,2.4vw,28px);color:var(--burgundy);margin-bottom:2px}
+.place-line-detail{font-size:16px;color:var(--ink)}
+.place-line-muted{font-size:14.5px;color:var(--ink-45);margin-top:2px}
 .place-actions{display:flex;flex-wrap:wrap;gap:12px}
 .place-figure img{width:100%;border-radius:var(--r-lg);box-shadow:var(--shadow-soft)}
 
@@ -575,6 +613,12 @@ address{font-style:normal}
 .wa-float.is-visible{opacity:1;transform:none;pointer-events:auto}
 .wa-float:hover{background:var(--burgundy-deep)}
 .wa-float svg{width:21px;height:21px;fill:currentColor;flex:none}
+
+/* Telas muito baixas (ex.: iPhone SE): botão vira só o ícone, para não cobrir texto */
+@media (max-height:600px){
+  .wa-float{width:50px;height:50px;padding:0;justify-content:center;gap:0}
+  .wa-float-label{display:none}
+}
 
 /* ---------- Reveal ---------- */
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
