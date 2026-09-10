@@ -270,6 +270,11 @@ address{font-style:normal}
   font-size:13px;color:var(--ink-45);
 }
 .hero-meta .hm{display:inline-flex;align-items:center;gap:10px;white-space:nowrap}
+/* em telas estreitas a linha quebra: o ponto separador ficaria orfao no inicio da linha */
+@media (max-width:479px){
+  .hero-meta{gap:4px 16px}
+  .hero-meta .dot{display:none}
+}
 .hero-meta strong{color:var(--burgundy);font-weight:600}
 
 .hero-figure{position:relative}
