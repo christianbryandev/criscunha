@@ -487,6 +487,7 @@ address{font-style:normal}
 /* ---------- Galeria (composição editorial em colunas) ---------- */
 .gallery{padding-block:var(--sec-y)}
 .gallery-grid{column-count:1;column-gap:14px}
+.gal-col{display:contents}
 .g{
   break-inside:avoid;
   margin-bottom:14px;
@@ -661,8 +662,14 @@ address{font-style:normal}
 
   .reviews-grid{gap:20px}
 
-  .gallery-grid{column-count:3;column-gap:18px}
-  .g{margin-bottom:18px}
+  /* colunas explícitas: a distribuição das fotos é escolhida, não sorteada */
+  .gallery-grid{
+    column-count:auto;
+    display:grid;grid-template-columns:repeat(3,1fr);
+    gap:18px;align-items:start;
+  }
+  .gal-col{display:flex;flex-direction:column;gap:18px}
+  .g{margin-bottom:0}
 
   .wa-float{right:26px;bottom:26px}
 }
